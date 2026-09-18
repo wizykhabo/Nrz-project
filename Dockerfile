@@ -24,6 +24,7 @@ RUN npm ci
 COPY resources ./resources
 COPY public ./public
 COPY vite.config.js tailwind.config.js postcss.config.js ./
+COPY --from=php_dependencies /app/vendor ./vendor
 
 RUN npm run build
 
